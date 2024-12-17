@@ -1,0 +1,27 @@
+*Summary of files opened during simulation
+
+Unit  File
+Num.  Variable Name
+*DSSAT Cropping System Model Ver. 4.8.5.000   -release    DEC 16, 2024; 23:03:38
+
+ Unit  Filename
+  501  OPCLR
+   21  FILEIO
+   25  DSPRO
+  502  LUNMFW
+  503  SIMCDE
+  123  WARNING.OUT
+   22  DTACDE
+  504  RUNLST
+   11  FILEW
+   96  OUTO
+   10  FILEC
+  505  OUTS
+   92  SEVAL
+  506  FILECO2
+  507  FILEF
+   13  FILESS
+    8  FILEA
+   76  evaluate.csv
+  116  summary.csv 
+  119  OUTINFO

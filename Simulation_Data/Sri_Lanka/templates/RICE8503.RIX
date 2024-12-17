@@ -1,0 +1,95 @@
+*EXP.DETAILS: AOOO8503RI SRILANKA MODIFIED
+
+*GENERAL
+@PEOPLE
+-99
+@ADDRESS
+MODIFIED
+@SITE
+MODIFIED
+@ PAREA  PRNO  PLEN  PLDR  PLSP  PLAY HAREA  HRNO  HLEN  HARM.........
+    -99   -99   -99   -99   -99   -99   -99   -99   -99   -99
+
+*TREATMENTS                        -------------FACTOR LEVELS------------
+@N R O C TNAME.................... CU FL SA IC MP MI MF MR MC MT ME MH SM
+ 1 1 0 0 SriLanka_rice              1  1  0  1  1  1  1  0  0  0  0  0  1
+
+*CULTIVARS
+@C CR INGENO CNAME
+ 1 RI IB0012 IR 58
+
+*FIELDS
+@L ID_FIELD WSTA....  FLSA  FLOB  FLDT  FLDD  FLDS  FLST SLTX  SLDP  ID_SOIL    FLNAME
+ 1 GENERIC2 {{ wsta }}   -99   -99   -99   -99   -99   -99 -99    -99  {{ id_soil }} Cereal 
+@L ...........XCRD ...........YCRD .....ELEV .............AREA .SLEN .FLWR .SLAS FLHST FHDUR
+ 1 {{ xcrd }} {{ ycrd }}       -99               -99   -99   -99   -99 {{ flhst }} {{ fhdur }}
+
+
+*INITIAL CONDITIONS
+@C   PCR ICDAT  ICRT  ICND  ICRN  ICRE  ICWD ICRES ICREN ICREP ICRIP ICRID ICNAME
+ 1    RI {{ sdate }}{{ icrt }}   -99     1     1   -99{{ icres }}{{ icren }}   -99   100     5 irrig
+@C  ICBL  SH2O  SNH4  SNO3
+{% for layer in ic_layers %}
+ 1{{ layer.icbl }}{{ layer.sh2o }}{{layer.snh4 }}{{ layer.sno3 }}
+{% endfor %}
+
+
+*PLANTING DETAILS
+@P PDATE EDATE  PPOP  PPOE  PLME  PLDS  PLRS  PLRD  PLDP  PLWT  PAGE  PENV  PLPH  SPRL                        PLNAME
+ 1 {{ pdate }}   -99    75    36     T     H    20     0     2     0    23    25     3     0                        UNKNOWN
+
+*IRRIGATION AND WATER MANAGEMENT
+@I  EFIR  IDEP  ITHR  IEPT  IOFF  IAME  IAMT IRNAME
+ 1   -99   -99   -99   -99   -99   -99     1 UNKNOWN
+@I IDATE  IROP IRVAL
+ 1     1 IR009   200
+ 1     1 IR008     2
+ 1     1 IR010     0
+ 1     1 IR006    30
+ 1     4 IR006    50
+ 1     8 IR006   100
+ 1    12 IR006   100
+ 1    16 IR006   100
+ 1    20 IR006   100
+ 1    25 IR006   100
+ 1    30 IR006   100
+ 1    35 IR006   100
+ 1    40 IR006   100
+ 1    45 IR006   100
+
+*FERTILIZERS (INORGANIC)
+@F FDATE  FMCD  FACD  FDEP  FAMN  FAMP  FAMK  FAMC  FAMO  FOCD FERNAME
+{% for fert in fertilizers  %}
+ 1 {{ fert.fdap }} FE005 AP002     5 {{ fert.famn }}     0   -99   -99   -99   -99 Urea
+{% endfor %}
+
+*RESIDUES AND ORGANIC FERTILIZER
+@R RDATE  RCOD  RAMT  RESN  RESP  RESK  RINP  RDEP  RMET RENAME
+1     0 RE003{{ ramt }}   -99   -99   -99   -99   -99   -99 Manure application
+
+*SIMULATION CONTROLS
+@N GENERAL     NYERS NREPS START SDATE RSEED SNAME.................... SMODEL
+ 1 GE          {{ nyers }}     1     S {{ sdate }}  2150 Irrigated                 RICER
+@N OPTIONS     WATER NITRO SYMBI PHOSP POTAS DISES  CHEM  TILL   CO2
+ 1 OP              Y     Y     N     N     N     N     N     N     M
+@N METHODS     WTHER INCON LIGHT EVAPO INFIL PHOTO HYDRO NSWIT MESOM MESEV MESOL
+ 1 ME              M     M     E     R     S     C     R     1     P     S     2
+@N MANAGEMENT  PLANT IRRIG FERTI RESID HARVS
+ 1 MA              R     D     D     R     M
+@N OUTPUTS     FNAME OVVEW SUMRY FROPT GROUT CAOUT WAOUT NIOUT MIOUT DIOUT VBOSE CHOUT OPOUT FMOPT
+ 1 OU              N     N     Y    14     N     N     N     N     N     N     0     N     N     C
+
+@  AUTOMATIC MANAGEMENT
+@N PLANTING    PFRST PLAST PH2OL PH2OU PH2OD PSTMX PSTMN
+ 1 PL          85028 85042    40   100    30    40    10
+@N IRRIGATION  IMDEP ITHRL ITHRU IROFF IMETH IRAMT IREFF
+ 1 IR             30    50   100 IB001 IB001    10     1
+@N NITROGEN    NMDEP NMTHR NAMNT NCODE NAOFF
+ 1 NI             30    50    25 IB001 IB001
+@N RESIDUES    RIPCN RTIME RIDEP
+ 1 RE            100     1    20
+@N HARVEST     HFRST HLAST HPCNP HPCNR
+ 1 HA              0 86035   100     0
+
+
+

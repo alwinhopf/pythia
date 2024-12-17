@@ -1,0 +1,76 @@
+*EXP.DETAILS: GHMZ8001MZ USA, maize template file
+
+*GENERAL
+@PEOPLE
+ Vijaya Joshi, Cheryl Porter, Gerrit Hoogenboom, Chris Villalobos
+@ADDRESS
+ UF
+@SITE
+ USA
+
+*TREATMENTS                        -------------FACTOR LEVELS------------
+@N R O C TNAME.................... CU FL SA IC MP MI MF MR MC MT ME MH SM
+ 1 1 1 0 Maize rainfed              1  1  0  1  1  0  1  1  0  0  0  0  1
+
+*CULTIVARS
+@C CR INGENO CNAME
+ 1 MZ 990001 LONG SEASON
+
+*FIELDS
+@L ID_FIELD WSTA....  FLSA  FLOB  FLDT  FLDD  FLDS  FLST SLTX  SLDP  ID_SOIL    FLNAME
+ 1 GENERIC2 GHCP       -99   -99   -99   -99   -99   -99 -99    -99  LK04314491 USA maize rf
+@L ...........XCRD ...........YCRD .....ELEV .............AREA .SLEN .FLWR .SLAS FLHST FHDUR
+ 1          80.958           6.708       -99               -99   -99   -99   -99 FH302    10
+
+*INITIAL CONDITIONS
+@C   PCR ICDAT  ICRT  ICND  ICRN  ICRE  ICWD ICRES ICREN ICREP ICRIP ICRID ICNAME
+ 1    MZ 10121    10   -99     1     1   -99   100   0.8   -99   100     5 rf
+@C  ICBL  SH2O  SNH4  SNO3
+ 1     5 0.195  0.04  0.34
+ 1    15 0.206  0.04  0.34
+ 1    30 0.221  0.04  0.34
+ 1    60 0.234  0.04  0.34
+ 1   100 0.234  0.04  0.34
+ 1   200 0.225  0.04  0.34
+
+*PLANTING DETAILS
+!planting info from Bako, Ghana experiment
+@P PDATE EDATE  PPOP  PPOE  PLME  PLDS  PLRS  PLRD  PLDP  PLWT  PAGE  PENV  PLPH  SPRL                        PLNAME
+ 1   -99   -99   5.0   5.0     S     R    70   -99     5   -99   -99   -99   -99   -99                        1985R
+
+*FERTILIZERS (INORGANIC)
+@F FDATE  FMCD  FACD  FDEP  FAMN  FAMP  FAMK  FAMC  FAMO  FOCD FERNAME
+ 1     0 FE005 AP002     5  50.0     0   -99   -99   -99   -99 Urea
+ 1    30 FE005 AP002     5  50.0     0   -99   -99   -99   -99 Urea
+
+*RESIDUES AND ORGANIC FERTILIZER
+@R RDATE  RCOD  RAMT  RESN  RESP  RESK  RINP  RDEP  RMET RENAME
+ 1     0 RE003   250   -99   -99   -99   -99   -99   -99 Manure application
+
+*ENVIRONMENT MODIFICATIONS
+@E ODATE EDAY  ERAD  EMAX  EMIN  ERAIN ECO2  EDEW  EWIND ENVNAME  
+ 1 10121 A   0 A   0 A   0 A   0 A   0 A   0 A   0 A   0 ENV modify
+
+*SIMULATION CONTROLS
+@N GENERAL     NYERS NREPS START SDATE RSEED SNAME.................... SMODEL
+ 1 GE             10     1     S 10121  2150 Rainfed                   MZCER
+@N OPTIONS     WATER NITRO SYMBI PHOSP POTAS DISES  CHEM  TILL   CO2
+ 1 OP              Y     Y     N     N     N     N     N     N     M
+@N METHODS     WTHER INCON LIGHT EVAPO INFIL PHOTO HYDRO NSWIT MESOM MESEV MESOL
+ 1 ME              M     M     E     R     S     L     R     1     P     S     2
+@N MANAGEMENT  PLANT IRRIG FERTI RESID HARVS
+ 1 MA              F     R     D     D     M
+@N OUTPUTS     FNAME OVVEW SUMRY FROPT GROUT CAOUT WAOUT NIOUT MIOUT DIOUT VBOSE CHOUT OPOUT FMOPT
+ 1 OU              N     N     Y    14     N     N     N     N     N     N     0     N     N     C
+  
+@  AUTOMATIC MANAGEMENT
+@N PLANTING    PFRST PLAST PH2OL PH2OU PH2OD PSTMX PSTMN
+ 1 PL          10244 10303    40   100    30    40    10
+@N IRRIGATION  IMDEP ITHRL ITHRU IROFF IMETH IRAMT IREFF
+ 1 IR             30    50   100 GS000 IR001    10   1.0
+@N NITROGEN    NMDEP NMTHR NAMNT NCODE NAOFF
+ 1 NI             30    10    50 FE001 GS000
+@N RESIDUES    RIPCN RTIME RIDEP
+ 1 RE            100     1    20
+@N HARVEST     HFRST HLAST HPCNP HPCNR
+ 1 HA              0 01096   100     0

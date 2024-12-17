@@ -1,0 +1,50 @@
+{
+	"name": "Sri_Lanka_Rice",
+	"workDir": "C:/pythia/Simulation_Data/OUTPUT/Sri_Lanka/Rice/",
+	"templateDir": "C:/pythia/Simulation_Data/Sri_Lanka/templates/",
+	"weatherDir": "C:/pythia/Simulation_Data/weather_data/Sri_Lanka",
+	"threads": 2,
+	"cores":4,
+	"ghr_root":"C:/pythia/Simulation_Data/eGHR",
+	"default_setup": {
+		"include":["C:/pythia/Simulation_Data/Sri_Lanka/CUL_files/RICER048.CUL"],
+		"template": "RICE8504.RIX",
+		"sites": "xy_from_vector::C:/pythia/Simulation_Data/Sri_Lanka/shapes/Sri_Lanka.shp",
+		"nyers": 20,
+		"icin": 10,
+		"icsw%": 25,
+		"flhst":"FH302",
+		"fhdur": 10,
+		"icren": 0.8,
+		"ph2ol": 40,
+		"pdate": "2018-10-15",
+		"pfrst": "2018-09-01",
+		"plast": "2018-10-30",
+		"sdate": "2018-01-01",
+		"id_soil": "lookup_ghr::raster::C:/pythia/Simulation_Data/raster/ggcmi_soils_2.tif",
+		"wsta": "lookup_wth::GHCP::vector::C:/pythia/Simulation_Data/Sri_Lanka/shapes/Sri_Lanka.shp::ID",
+		"ic_layers": "generate_ic_layers::$id_soil",
+		"fertilizers": "split_fert_dap_percent::$fen_tot::5::0::50::30::50"
+	},
+	"dssat": {
+		"executable": "C:/DSSAT48/DSCSM048"
+	},
+	"analytics_setup": {
+		"per_pixel_prefix":"Sri_Lanka_Rice",
+		"singleOutput": true
+	},
+	"runs": [
+		{
+			"name": "SL_Rice",
+			"harvestArea": "raster::C:/pythia/Simulation_Data/raster/spam2010V2r0_global_H_RICE_I.tif",
+			"icres": 100,
+			"icrt": 10,
+			"fen_tot": 100,
+			"irrig": "R",
+			"ramt":250,
+			"ingeno": "IB0055",
+			"cname": "Basmati 385",
+			"startYear": 2018
+		}
+	]
+}

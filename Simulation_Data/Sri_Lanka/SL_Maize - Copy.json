@@ -1,0 +1,85 @@
+{
+	"name": "Sri_Lanka_Maize",
+	"workDir": "C:/pythia/Simulation_Data/OUTPUT/Sri_Lanka/Maize/",
+	"templateDir": "C:/pythia/Simulation_Data/Sri_Lanka/templates/",
+	"weatherDir": "C:/pythia/Simulation_Data/weather_data/Sri_Lanka",
+	"threads": 2,
+	"cores":4,
+	"ghr_root":"C:/pythia/Simulation_Data/eGHR",
+	"default_setup": {
+		"include":["C:/pythia/Simulation_Data/Sri_Lanka/CUL_files/MZCER048.CUL"],
+		"template": "GHMZ8001.SNX",
+		"sites": "xy_from_vector::C:/pythia/Simulation_Data/Sri_Lanka/shapes/Sri_Lanka.shp",
+		"nyers": 10,
+		"icin": 10,
+		"icsw%": 25,
+		"flhst":"FH302",
+		"fhdur": 10,
+		"icren": 0.8,
+		"ph2ol": 40,
+		"pfrst": "2010-09-01",
+		"plast": "2010-10-30",
+		"sdate": "2010-05-01",
+		"id_soil": "lookup_ghr::raster::C:/pythia/Simulation_Data/raster/ggcmi_soils_2.tif",
+		"wsta": "lookup_wth::GHCP::vector::C:/pythia/Simulation_Data/Sri_Lanka/shapes/Sri_Lanka.shp::ID",
+		"ic_layers": "generate_ic_layers::$id_soil",
+		"fertilizers": "split_fert_dap_percent::$fen_tot::5::0::50::30::50"
+	},
+	"dssat": {
+		"executable": "C:/DSSAT48/DSCSM048"
+	},
+	"analytics_setup": {
+		"per_pixel_prefix":"Sri_Lanka_Maize",
+		"singleOutput": true
+	},
+	"runs": [
+		{
+			"name": "Sri_Lanka_maize_rf_highN",
+      "harvestArea": "raster::C:/pythia/Simulation_Data/raster/spam2010V2r0_global_H_MAIZ_H.tif",
+			"icres": 100,
+			"icrt": 10,
+			"fen_tot": 100,
+			"irrig": "R",
+			"ramt":250,
+			"ingeno": "990001",
+			"cname": "LONG SEASON",
+			"startYear": 2010
+		},
+		{
+			"name": "SL_maize_rf_lowN",
+			"harvestArea": "raster::C:/pythia/Simulation_Data/raster/spam2010V2r0_global_H_MAIZ_L.tif",
+			"icres": 50,
+			"icrt": 5,
+			"fen_tot": 20,
+			"irrig": "R",
+			"ramt":250,
+			"ingeno": "990001",
+			"cname": "LONG SEASON",
+			"startYear": 2010
+		},
+		{
+			"name": "SL_maize_rf_0N",
+			"harvestArea": "raster::C:/pythia/Simulation_Data/raster/spam2010V2r0_global_H_MAIZ_S.tif",
+			"icres": 0,
+			"icrt": 0,
+			"fen_tot": 0,
+			"irrig": "R",
+			"ramt":250,
+			"ingeno": "990001",
+			"cname": "LONG SEASON",
+			"startYear": 2010
+		},
+   		{
+			"name": "SL_maize_irrig_highN",
+      "harvestArea": "raster::C:/pythia/Simulation_Data/raster/spam2010V2r0_global_H_MAIZ_I.tif",
+			"icres": 100,
+			"icrt": 10,
+			"fen_tot": 100,
+			"irrig": "A",
+			"ramt":250,
+			"ingeno": "990001",
+			"cname": "LONG SEASON",
+			"startYear": 2010
+		}
+	]
+}
