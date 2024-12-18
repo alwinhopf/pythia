@@ -9,7 +9,7 @@
 	"default_setup": {
 		"include":["C:/pythia/Simulation_Data/USA/CUL_files/MZCER048.CUL"],
 		"template": "USMZ8001.SNX",
-		"sites": "xy_from_vector::C:/pythia/Simulation_Data/USA/shapes/USA_gridpoints.shp",
+		"sites": "xy_from_vector::C:/pythia/Simulation_Data/USA/shapes/USA_gridpoints_2degree.shp",
 		"nyers": 14,
 		"icin": 10,
 		"icsw%": 25,
