@@ -21,8 +21,8 @@ minx, miny, maxx, maxy = shapefile.total_bounds
 print(f"Bounding box: ({minx}, {miny}, {maxx}, {maxy})")
 
 print("\nStep 3: Creating a 1 * 1 degree grid of points...")
-x_coords = np.arange(np.floor(minx), np.ceil(maxx), 0.5)
-y_coords = np.arange(np.floor(miny), np.ceil(maxy), 0.5)
+x_coords = np.arange(np.floor(minx), np.ceil(maxx), 1.0)
+y_coords = np.arange(np.floor(miny), np.ceil(maxy), 1.0)
 
 total_points = len(x_coords) * len(y_coords)
 points = []
@@ -40,6 +40,7 @@ with tqdm(total=total_points, desc="Creating grid points") as pbar:
 print("\nStep 4: Creating a GeoDataFrame from the points...")
 grid = gpd.GeoDataFrame(geometry=points, crs=shapefile.crs)
 grid['ID'] = range(1, len(grid) + 1)
+#grid['ID'] = [f"{i:08d}" for i in range(1, len(grid) + 1)]
 grid['Latitude'] = latitudes
 grid['Longitude'] = longitudes
 grid['nasapid'] = np.arange(1, len(grid) + 1, dtype=np.int64)
