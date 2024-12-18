@@ -9,21 +9,21 @@
 	"default_setup": {
 		"include":["C:/pythia/Simulation_Data/USA/CUL_files/MZCER048.CUL"],
 		"template": "USMZ8001.SNX",
-		"sites": "xy_from_vector::C:/pythia/Simulation_Data/USA/shapes/USA_gridpoints2.shp",
-		"nyers": 10,
+		"sites": "xy_from_vector::C:/pythia/Simulation_Data/USA/shapes/USA_gridpoints.shp",
+		"nyers": 14,
 		"icin": 10,
 		"icsw%": 25,
 		"flhst":"FH302",
-		"fhdur": 20,
+		"fhdur": 10,
 		"icren": 0.8,
 		"ph2ol": 40,
-		"pfrst": "2000-09-01",
-		"plast": "2000-10-30",
-		"sdate": "2000-05-01",
+		"pfrst": "2010-04-15",
+		"plast": "2010-05-15",
+		"sdate": "2010-02-01",
 		"id_soil": "lookup_ghr::raster::C:/pythia/Simulation_Data/raster/ggcmi_soils_2.tif",
-		"wsta": "lookup_wth::GHCP::vector::C:/pythia/Simulation_Data/USA/shapes/USA_gridpoints2.shp::ID",
+		"wsta": "lookup_wth::GHCP::vector::C:/pythia/Simulation_Data/USA/shapes/USA_gridpoints.shp::ID",
 		"ic_layers": "generate_ic_layers::$id_soil",
-		"fertilizers": "split_fert_dap_percent::$fen_tot::5::0::50::30::50"
+		"fertilizers": "split_fert_dap_percent::$fen_tot::5::0::30::25::40::50::30"
 	},
 	"dssat": {
 		"executable": "C:/DSSAT48/DSCSM048"
@@ -38,12 +38,12 @@
       "harvestArea": "raster::C:/pythia/Simulation_Data/raster/spam2010V2r0_global_H_MAIZ_H.tif",
 			"icres": 100,
 			"icrt": 10,
-			"fen_tot": 100,
+			"fen_tot": 200,
 			"irrig": "R",
 			"ramt":250,
 			"ingeno": "990001",
 			"cname": "LONG SEASON",
-			"startYear": 2000
+			"startYear": 2010
 		}
 	]
 }

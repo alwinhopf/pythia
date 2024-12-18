@@ -1,0 +1,42 @@
+*WARNING DETAIL FILE
+
+******************************************************************************
+
+*DSSAT Cropping System Model Ver. 4.8.5.000 -release  DEC 17, 2024 23:58:40
+
+*RUN   1        : Maize rainfed                      USMZ8001    1
+
+ EXPERIMENT     : USMZ8001 SN USA, maize template file
+ DATA PATH      :
+ TREATMENT  1   : Maize rainfed
+  
+
+ IPEXP   YEAR DOY =    0   0
+ Photosynthesis method (PHOTO in FILEX) has been changed                       
+ from "L" to "C" for compatibility with crop model, MZCER.                     
+
+ IPRES   YEAR DOY =    0   0
+ Residue application   1                                                       
+ Neither residue incorporation percentage nor depth specified. Applied residues
+ will remain on surface until a tillage event is specified.                    
+
+ IPWTH   YEAR DOY = 2010  32
+ Value of TAMP, amplitude of soil temperature function, is missing.            
+ A default value of  5.0°C is being used for this simulation,                 
+ which may produce inaccurate results.                                         
+
+ RPLACE  YEAR DOY = 2010  32
+ Default N concentration used for one or more residue applications             
+
+ SOILNI  YEAR DOY = 2010  32
+ N content of residue was changed from value in initial conditions             
+   section of experiment file to maintain allowable C:N ratio.                 
+   - Previous crop code                 :    MZ                                
+   - Recommended N content for surface residue (%):   1.1                      
+   - Value read from file               : 0.800%                               
+   - Value changed to                   : 0.880%                               
+ To change allowable N content, modify SCN parameter                           
+   in RESCH048.SDA file.                                                       
+
+ MZ_GRO  YEAR DOY = 2010 218
+   Crop failure growth program terminated                                      

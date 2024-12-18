@@ -29,7 +29,7 @@ mean_yield_df <- raw_pythia_output %>% group_by(LATITUDE, LONGITUDE) %>%
 coordinates(mean_yield_df) <- ~LONGITUDE+LATITUDE
 proj4string(mean_yield_df) <- CRS("+proj=longlat +datum=WGS84")
 
-AEZ<-st_read("C:/pythia/Simulation_Data/USA/shapes/USA_gridpoints2.shp")
+AEZ<-st_read("C:/pythia/Simulation_Data/USA/shapes/cb_2022_us_nation_20m.shp")
 
 
 #PLOT ONLY MEAN YIELD VALUES 

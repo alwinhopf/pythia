@@ -1,0 +1,19 @@
+*WARNING DETAIL FILE
+
+******************************************************************************
+
+*DSSAT Cropping System Model Ver. 4.8.5.000 -release  DEC 17, 2024 23:58:18
+
+*RUN   1        : Maize rainfed                      USMZ8001    1
+
+ EXPERIMENT     : USMZ8001 SN USA, maize template file
+ DATA PATH      :
+ TREATMENT  1   : Maize rainfed
+  
+
+ MAKEFW  YEAR DOY =    0   0
+ Weather file not found.  Please check file name or create file.               
+ File: GHCP.WTH                                                                
+    Line:     0                                                                
+    Error key: MAKEFW                                                          
+ Simulations terminated.                                                       

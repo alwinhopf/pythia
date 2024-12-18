@@ -1,0 +1,19 @@
+*RUN-TIME ERRORS OUTPUT FILE
+
+
+
+*DSSAT Cropping System Model Ver. 4.8.5.000 -release  DEC 17, 2024 23:58:12
+
+*RUN   1        : Maize rainfed                      USMZ8001    1
+
+ EXPERIMENT     : USMZ8001 SN USA, maize template file
+ DATA PATH      :
+ TREATMENT  1   : Maize rainfed
+  
+USMZ8001.SNX, Trt    0
+ 
+ Weather file not found.  Please check file name or create file.                
+  
+File: GHCP.WTH   Line:     0   Error key: MAKEFW
+
+Additional information may be available in WARNING.OUT file.
