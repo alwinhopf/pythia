@@ -33,7 +33,7 @@
 *PLANTING DETAILS
 !planting info from Bako, Ghana experiment
 @P PDATE EDATE  PPOP  PPOE  PLME  PLDS  PLRS  PLRD  PLDP  PLWT  PAGE  PENV  PLPH  SPRL                        PLNAME
- 1   -99   -99   5.0   5.0     S     R    70   -99     5   -99   -99   -99   -99   -99                        1985R
+ 1   -99   -99   8.0   8.0     S     R    70   -99     5   -99   -99   -99   -99   -99                        1985R
 
 *FERTILIZERS (INORGANIC)
 @F FDATE  FMCD  FACD  FDEP  FAMN  FAMP  FAMK  FAMC  FAMO  FOCD FERNAME

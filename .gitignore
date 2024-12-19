@@ -16,3 +16,5 @@ dist
 .python-version
 *.SOL
 *.db
+/Simulation_Data/OUTPUT
+/Simulation_Data
