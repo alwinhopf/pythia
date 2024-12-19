@@ -17,4 +17,4 @@ dist
 *.SOL
 *.db
 /Simulation_Data/OUTPUT
-/Simulation_Data
+/Simulation_Dataweather_data
