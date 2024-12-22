@@ -18,3 +18,5 @@ dist
 *.db
 /Simulation_Data/OUTPUT
 /Simulation_Dataweather_data
+*.WTH
+*.WTH

@@ -9,7 +9,7 @@
 	"default_setup": {
 		"include":["C:/pythia/Simulation_Data/USA/CUL_files/MZCER048.CUL"],
 		"template": "USMZ8001.SNX",
-		"sites": "xy_from_vector::C:/pythia/Simulation_Data/USA/shapes/filtered_grid_contiguous_us2.shp",
+		"sites": "xy_from_vector::C:/pythia/Simulation_Data/USA/shapes/USA_continous_states_gridpoints_0.5degree.shp",
 		"nyers": 14,
 		"icin": 10,
 		"icsw%": 25,
@@ -21,7 +21,7 @@
 		"plast": "2010-05-15",
 		"sdate": "2010-02-01",
 		"id_soil": "lookup_ghr::raster::C:/pythia/Simulation_Data/raster/ggcmi_soils_2.tif",
-		"wsta": "lookup_wth::GHCP::vector::C:/pythia/Simulation_Data/USA/shapes/filtered_grid_contiguous_us2.shp::ID",
+		"wsta": "lookup_wth::GHCP::vector::C:/pythia/Simulation_Data/USA/shapes/USA_continous_states_gridpoints_0.5degree.shp::ID",
 		"ic_layers": "generate_ic_layers::$id_soil",
 		"fertilizers": "split_fert_dap_percent::$fen_tot::5::0::30::25::40::50::30"
 	},
