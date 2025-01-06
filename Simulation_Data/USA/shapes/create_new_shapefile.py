@@ -21,13 +21,8 @@ minx, miny, maxx, maxy = shapefile.total_bounds
 print(f"Bounding box: ({minx}, {miny}, {maxx}, {maxy})")
 
 print("\nStep 3: Creating a 1 * 1 degree grid of points...")
-<<<<<<< Updated upstream
-x_coords = np.arange(np.floor(minx), np.ceil(maxx), 2.0)
-y_coords = np.arange(np.floor(miny), np.ceil(maxy), 2.0)
-=======
 x_coords = np.arange(np.floor(minx), np.ceil(maxx), 0.5)
 y_coords = np.arange(np.floor(miny), np.ceil(maxy), 0.5)
->>>>>>> Stashed changes
 
 total_points = len(x_coords) * len(y_coords)
 points = []
@@ -63,11 +58,7 @@ points_within = grid[grid.intersects(shapefile.unary_union)]
 print(f"Number of points within or on the boundary: {len(points_within)}")
 
 print("Step 6: Saving grid points to USA_gridpoints.shp...")
-<<<<<<< Updated upstream
-output_shapefile = os.path.join(input_dir, "USA_gridpoints_2degree.shp")
-=======
 output_shapefile = os.path.join(input_dir, "USA_gridpoints_0_5degrees.shp")
->>>>>>> Stashed changes
 points_within.to_file(output_shapefile, driver="ESRI Shapefile")
 print(f"Grid points saved successfully to {output_shapefile}")
 
@@ -82,11 +73,7 @@ plt.xlabel("Longitude")
 plt.ylabel("Latitude")
 
 # Save the plot as a JPEG file
-<<<<<<< Updated upstream
-output_figure = os.path.join(input_dir, "shapefile_grid_points_2degree.jpg")
-=======
 output_figure = os.path.join(input_dir, "shapefile_grid_points_0_5degrees.jpg")
->>>>>>> Stashed changes
 plt.savefig(output_figure, dpi=600, bbox_inches='tight')
 print(f"Plot saved as '{output_figure}'")
 
