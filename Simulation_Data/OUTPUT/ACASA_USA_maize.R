@@ -19,7 +19,7 @@ library(dplyr)
 ####### NEW CODE
 
 #read csv file from pythia
-raw_pythia_output <- read.csv("C:/pythia/Simulation_Data/OUTPUT/USA/Maize/USA_maize_rf_highN/USA_maize_rf_highN.csv")
+raw_pythia_output <- read.csv("C:/pythia/Simulation_Data/OUTPUT/USA/Carinata/USA_carinata_rf_highN/USA_carinata_rf_highN.csv")
                                
 #get mean for yield
 mean_yield_df <- raw_pythia_output %>% group_by(LATITUDE, LONGITUDE) %>%
@@ -59,6 +59,6 @@ plot_TOT_PROD=ggplot()+
 
 
 path_output <- "C:/pythia/Simulation_Data/OUTPUT"
-ggsave(plot = plot_TOT_PROD, filename = "C:/pythia/Simulation_Data/OUTPUT/USA_maize_rf_highN_Yield.jpeg", dpi=300,
+ggsave(plot = plot_TOT_PROD, filename = "C:/pythia/Simulation_Data/OUTPUT/USA_carinata_rf_highN_Yield.jpeg", dpi=300,
        height = 11,width = 10)
 plot_TOT_PROD
