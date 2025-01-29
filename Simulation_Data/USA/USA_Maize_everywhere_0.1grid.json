@@ -9,7 +9,7 @@
 	"default_setup": {
 		"include":["C:/pythia/Simulation_Data/USA/CUL_files/MZCER048.CUL"],
 		"template": "USMZ8001.SNX",
-		"sites": "xy_from_vector::C:/pythia/Simulation_Data/USA/shapes/USA_continous_states_gridpoints_0.1degree.shp",
+		"sites": "xy_from_vector::C:/pythia/Simulation_Data/USA/shapes/USA_contiguous_states_gridpoints_0.1degree.shp",
 		"nyers": 40,
 		"icin": 10,
 		"icsw%": 25,
@@ -21,7 +21,7 @@
 		"plast": "1984-05-15",
 		"sdate": "1984-02-01",
 		"id_soil": "lookup_ghr::raster::C:/pythia/Simulation_Data/raster/ggcmi_soils_2.tif",
-		"wsta": "lookup_wth::GHCP::vector::C:/pythia/Simulation_Data/USA/shapes/USA_continous_states_gridpoints_0.1degree.shp::ID",
+		"wsta": "lookup_wth::GHCP::vector::C:/pythia/Simulation_Data/USA/shapes/USA_contiguous_states_gridpoints_0.1degree.shp::ID",
 		"ic_layers": "generate_ic_layers::$id_soil",
 		"fertilizers": "split_fert_dap_percent::$fen_tot::5::0::30::25::40::50::30"
 	},
@@ -35,7 +35,7 @@
 	"runs": [
 		{
 			"name": "USA_maize_rf_highN",
-      "harvestArea": "raster::C:/pythia/Simulation_Data/raster/spam2010V2r0_global_H_MAIZ_H.tif",
+      "harvestArea": "",
 			"icres": 100,
 			"icrt": 10,
 			"fen_tot": 200,

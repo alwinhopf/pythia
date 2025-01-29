@@ -19,11 +19,14 @@ library(dplyr)
 ####### NEW CODE
 
 #read csv file from pythia
-raw_pythia_output <- read.csv("C:/pythia/Simulation_Data/OUTPUT/USA/Carinata/USA_carinata_rf_highN/USA_carinata_rf_highN.csv")
+#raw_pythia_output <- read.csv("C:/pythia/Simulation_Data/OUTPUT/USA/Carinata/USA_carinata_rf_highN/USA_carinata_rf_highN.csv")
+raw_pythia_output <- read.csv("C:/pythia/Simulation_Data/OUTPUT/USA0.50grid/Maize/USA_maize_rf_highN/USA_maize_rf_highN.csv")
                                
 #get mean for yield
 mean_yield_df <- raw_pythia_output %>% group_by(LATITUDE, LONGITUDE) %>%
   summarise(mean_yield = mean(HWAH, na.rm = T))
+mean_yield_df <- raw_pythia_output %>% group_by(LATITUDE, LONGITUDE) %>%
+  summarise(mean_yield = mean(N2OEM, na.rm = T))
 
 #transform the dataframe into a shapefile
 coordinates(mean_yield_df) <- ~LONGITUDE+LATITUDE
@@ -36,7 +39,7 @@ AEZ<-st_read("C:/pythia/Simulation_Data/USA/shapes/contiguous_us2.shp")
 plot_TOT_PROD=ggplot()+
   geom_sf(data= sf::st_as_sf(mean_yield_df), aes(color=mean_yield),shape=15, size = 8.12)+ #calculate HWAH standard deviation first and put it in separate column HWAHSD
   #geom_map(data=mean_yield_df, map = mean_yield_df, aes(long=LONGITUDE, lat=LATITUDE))+
-  labs( color="Yield(kg/ha)")+
+  labs( color="NO2 Emission (xx/ha)")+
   theme(legend.key.size = unit(5.0, "cm"),
         legend.key.width = unit(2.5,"cm")) +
   geom_sf(data=AEZ, size=15.05, alpha=15.05, fill=NA)+
