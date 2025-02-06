@@ -20,13 +20,13 @@ library(dplyr)
 
 #read csv file from pythia
 #raw_pythia_output <- read.csv("C:/pythia/Simulation_Data/OUTPUT/USA/Carinata/USA_carinata_rf_highN/USA_carinata_rf_highN.csv")
-raw_pythia_output <- read.csv("C:/pythia/Simulation_Data/OUTPUT/USA14years/Maize/USA_maize_rf_highN/USA_maize_rf_highN.csv")
+raw_pythia_output <- read.csv("C:/pythia/Simulation_Data/OUTPUT/USA/Maize/USA_maize_rf_highN/USA_maize_rf_highN.csv")
                                
 #get mean for yield
 mean_yield_df <- raw_pythia_output %>% group_by(LATITUDE, LONGITUDE) %>%
   summarise(mean_yield = mean(HWAH, na.rm = T))
-mean_yield_df <- raw_pythia_output %>% group_by(LATITUDE, LONGITUDE) %>%
-  summarise(mean_yield = mean(ROCM, na.rm = T))
+#mean_yield_df <- raw_pythia_output %>% group_by(LATITUDE, LONGITUDE) %>%
+#  summarise(mean_yield = mean(ROCM, na.rm = T))
 
 #transform the dataframe into a shapefile
 coordinates(mean_yield_df) <- ~LONGITUDE+LATITUDE
