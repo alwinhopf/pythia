@@ -21,8 +21,8 @@ minx, miny, maxx, maxy = shapefile.total_bounds
 print(f"Bounding box: ({minx}, {miny}, {maxx}, {maxy})")
 
 print("\nStep 3: Creating a 0.5 * 0.5 degree grid of points...")
-x_coords = np.arange(np.floor(minx), np.ceil(maxx), 0.05)
-y_coords = np.arange(np.floor(miny), np.ceil(maxy), 0.05)
+x_coords = np.arange(np.floor(minx), np.ceil(maxx), 5.00)
+y_coords = np.arange(np.floor(miny), np.ceil(maxy), 5.00)
 
 total_points = len(x_coords) * len(y_coords)
 points = []
@@ -58,7 +58,7 @@ points_within = grid[grid.intersects(shapefile.unary_union)]
 print(f"Number of points within or on the boundary: {len(points_within)}")
 
 print("Step 6: Saving grid points to USA_gridpoints.shp...")
-output_shapefile = os.path.join(input_dir, "USA_contiguous_states_gridpoints_0.05degree.shp")
+output_shapefile = os.path.join(input_dir, "USA_contiguous_states_gridpoints_5.00degree.shp")
 points_within.to_file(output_shapefile, driver="ESRI Shapefile")
 print(f"Grid points saved successfully to {output_shapefile}")
 
@@ -68,12 +68,12 @@ shapefile.plot(ax=ax, edgecolor='black', facecolor='none')
 points_within.plot(ax=ax, color='red', markersize=5)
 
 # Set title and labels
-plt.title("0.05 * 0.05 Degree Grid Points Over Shapefile")
+plt.title("5.00 * 5.00 Degree Grid Points Over Shapefile")
 plt.xlabel("Longitude")
 plt.ylabel("Latitude")
 
 # Save the plot as a JPEG file
-output_figure = os.path.join(input_dir, "USA_contiguous_states_gridpoints_0.05degree.jpg")
+output_figure = os.path.join(input_dir, "USA_contiguous_states_gridpoints_5.00degree.jpg")
 plt.savefig(output_figure, dpi=600, bbox_inches='tight')
 print(f"Plot saved as '{output_figure}'")
 

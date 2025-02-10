@@ -1,0 +1,49 @@
+{
+	"name": "USA_maize_rf_highN",
+	"workDir": "C:/pythia/Simulation_Data/OUTPUT/USA/Maize/USA_maize_rf_highN_5.00grid/",
+	"templateDir": "C:/pythia/Simulation_Data/USA/templates/",
+	"weatherDir": "C:/pythia/Simulation_Data/weather_data/USA_5.0",
+	"threads": 8,
+	"cores":8,
+	"ghr_root":"C:/pythia/Simulation_Data/eGHR",
+	"default_setup": {
+		"include":["C:/pythia/Simulation_Data/USA/CUL_files/MZCER048.CUL"],
+		"template": "USMZ8001.SNX",
+		"sites": "xy_from_vector::C:/pythia/Simulation_Data/USA/shapes/USA_contiguous_states_gridpoints_5.00degree.shp",
+		"nyers": 40,
+		"icin": 10,
+		"icsw%": 25,
+		"flhst":"FH302",
+		"fhdur": 10,
+		"icren": 0.8,
+		"ph2ol": 40,
+		"pfrst": "1984-04-15",
+		"plast": "1984-05-15",
+		"sdate": "1984-02-01",
+		"id_soil": "lookup_ghr::raster::C:/pythia/Simulation_Data/raster/ggcmi_soils_2.tif",
+		"wsta": "lookup_wth::GHCP::vector::C:/pythia/Simulation_Data/USA/shapes/USA_contiguous_states_gridpoints_5.00degree.shp::ID",
+		"ic_layers": "generate_ic_layers::$id_soil",
+		"fertilizers": "split_fert_dap_percent::$fen_tot::5::0::30::25::40::50::30"
+	},
+	"dssat": {
+		"executable": "C:/DSSAT48/DSCSM048"
+	},
+	"analytics_setup": {
+		"per_pixel_prefix":"USA_maize_rf_highN",
+		"singleOutput": true
+	},
+	"runs": [
+		{
+			"name": "USA_maize_rf_highN_5.0grid",
+      "harvestArea": "",
+			"icres": 100,
+			"icrt": 10,
+			"fen_tot": 200,
+			"irrig": "R",
+			"ramt":250,
+			"ingeno": "990001",
+			"cname": "LONG SEASON",
+			"startYear": 1984
+		}
+	]
+}
